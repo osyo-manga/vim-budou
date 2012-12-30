@@ -13,8 +13,10 @@ endfunction
 
 
 function! budou#verbosefile_pop()
+	let filename = &verbosefile
 	let &verbosefile = get(s:verbosefiles, -1)
 	call remove(s:verbosefiles, -1)
+	return filename
 endfunction
 
 
